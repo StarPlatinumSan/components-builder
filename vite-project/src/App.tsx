@@ -1,8 +1,12 @@
+import { useState } from "react";
 import SlidePlatinum from "./components/SlidePlatinum";
 import InfiniteSlider from "./components/InfiniteSlider";
+import ToggleSwitch from "./components/ToggleSwitch";
 import "./App.css";
 
 function App() {
+	const [isToggled, setIsToggled] = useState(false);
+
 	const sponsorLogos = [
 		<div>Sponsor 1</div>,
 		<div>Sponsor 2</div>,
@@ -39,8 +43,12 @@ function App() {
 					</SlidePlatinum>
 				</header>
 
-				<div className="flex-center">
+				<div className="sliderContainer flex-center">
 					<InfiniteSlider items={sponsorLogos} sliderWidth="100%" itemWidth="200px" itemHeight="60px" duration={15} />
+				</div>
+
+				<div>
+					<ToggleSwitch checked={isToggled} onChange={(checked) => setIsToggled(checked)} id="customToggleSwitch" className="btnSwitchCustom" />
 				</div>
 			</div>
 		</>

@@ -23,7 +23,7 @@
 
 	width: var(--itemWidth);
 	height: var(--itemHeight);
-	color: white;
+	color: #333333;
 
 	animation-name: slider;
 	animation-duration: var(--duration);

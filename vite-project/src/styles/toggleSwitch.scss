@@ -1,0 +1,65 @@
+// Background Colors
+$dark-bg: #222; // Background color for the unchecked state
+$light-bg: #f9f9f9; // Background color for the checked state
+
+// Gradient Colors
+$gradient-dark-start: #444; // Start color of gradient for the unchecked toggle knob
+$gradient-dark-end: #222; // End color of gradient for the unchecked toggle knob
+$gradient-light-start: #eaeaea; // Start color of gradient for the checked toggle knob
+$gradient-light-end: #f9f9f9; // End color of gradient for the checked toggle knob
+
+// Shadow Colors
+$shadow-light: #ffffff33; // Light shadow for the toggle's background and knob
+$shadow-dark: #5858581a; // Dark shadow for the toggle when checked
+
+// Border Colors
+$border-dark: #444; // Border color for the knob in the unchecked state
+$border-light: #eaeaea; // Border color for the knob in the checked state
+
+.btnSwitchCustom {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	font-size: 0.75rem;
+	justify-self: right;
+}
+
+.btnSwitchCustom input[type="checkbox"] {
+	position: relative;
+	background-color: $dark-bg;
+	border: none;
+	width: 80px;
+	height: 40px;
+	appearance: none;
+	outline: none;
+	border-radius: 20px;
+	box-shadow: inset 0 2px 2px $shadow-light, inset 0 -2px 2px $shadow-light;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.btnSwitchCustom input:checked[type="checkbox"] {
+	background-color: $light-bg;
+	box-shadow: inset 0 2px 2px $shadow-dark, inset 0 -2px 2px $shadow-dark;
+}
+
+.btnSwitchCustom input[type="checkbox"]::before {
+	content: "";
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	top: 0px;
+	right: 0px;
+	background: linear-gradient(to bottom, $gradient-dark-start, $gradient-dark-end);
+	transition: 0.5s;
+	box-shadow: inset 0 2px 2px $shadow-light, inset 0 -2px 2px $shadow-light;
+	border: 2px solid $border-dark;
+}
+
+.btnSwitchCustom input:checked[type="checkbox"]::before {
+	background: linear-gradient(to bottom, $gradient-light-start, $gradient-light-end);
+	box-shadow: inset 0 2px 2px #fff, inset 0 -2px 2px #fff;
+	transform: translateX(-40px);
+	border: 2px solid $border-light;
+}

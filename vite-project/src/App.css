@@ -1,3 +1,17 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+.sliderContainer {
+	background-color: azure;
+	padding: 1rem 0rem 1rem 0rem;
+	width: 50%;
+	box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+}
+
 header {
 	display: flex;
 	justify-content: center;
