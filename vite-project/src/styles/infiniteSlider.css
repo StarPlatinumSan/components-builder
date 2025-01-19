@@ -1,0 +1,53 @@
+.infinite-slider {
+	overflow: hidden;
+
+	--itemWidth: 120px;
+	--itemHeight: 50px;
+	--duration: 15s;
+	--count: 12;
+	--visibleCount: 6;
+}
+
+.infinite-slider .list {
+	display: flex;
+	flex-wrap: nowrap;
+
+	min-width: calc(var(--itemWidth) * var(--count));
+	width: 50% !important;
+	height: var(--itemHeight);
+	position: relative;
+}
+
+.infinite-slider .sponsor {
+	position: absolute;
+
+	width: var(--itemWidth);
+	height: var(--itemHeight);
+	color: white;
+
+	animation-name: slider;
+	animation-duration: var(--duration);
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-delay: calc((var(--duration) / var(--count)) * var(--position) * -1);
+
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+
+.infinite-slider.paused .sponsor {
+	animation-play-state: paused;
+}
+
+@keyframes slider {
+	0% {
+		left: 100%;
+	}
+	100% {
+		left: calc(var(--itemWidth) * -1);
+	}
+}
