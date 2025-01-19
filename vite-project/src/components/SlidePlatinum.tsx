@@ -16,7 +16,7 @@ You can customize the appearance by modifying the CSS classes:
 
 It functions as both a clickable and hover-activated slidedown, offering flexible interaction modes to suit various user experiences.
 
-### Example Usage in JSX:
+### Example:
 <SlidePlatinum title="Your title here" duration={0.3} trigger="click">
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ex velit nisi quaerat.

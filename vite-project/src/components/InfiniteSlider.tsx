@@ -8,8 +8,7 @@
  * to left automatically. On hover, it pauses. Feel free to customize
  * animation duration, item width, and height via props.
  *
- * EXAMPLE:
- *
+ * ### Example:
  *  <InfiniteSlider
  *    items={[
  *      <div>Item1</div>,
@@ -22,7 +21,6 @@
  *    itemHeight="60px"
  *    duration={15}
  *  />
- *
  * =============================================================================
  */
 
